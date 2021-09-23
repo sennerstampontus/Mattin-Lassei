@@ -10,8 +10,15 @@
     }
 }
 
+@mixin tablet-ls {
+    @media (min-width: #{$breakpoint-tablet-ls}) {
+    @content
+}
+}
+
 @mixin desktop {
     @media (min-width: #{$breakpoint-desktop}) {
         @content
     }
 }
+

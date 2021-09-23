@@ -11,15 +11,29 @@ html, body {
     line-height: 1.5;
 }
 
+li {
+    font-size: 1rem;
+    font-family: $primary-font;
+    font-weight: $medium;
+    text-transform: uppercase;
+    list-style: none;
+    text-decoration: none;
+}
+
 .cont-grid {
     display: grid;
-    grid-template-areas:    'navbar navbar'
-                            'showcase showcase'
-                            'sectionleft sectionright'
-                            'contentleft contentright'
-                            'contact contact'
-                            'latest latest'
-                            'readmore readmore';
+    grid-template-columns: 1fr;
+@include tablet-ls {
+    grid-template-areas:    'navbar navbar '
+    'showcase showcase'
+    'sectionleft sectionright'
+    'contentleft contentright'
+    'contact contact'
+    'latest latest'
+    'readmore readmore';
+
+}
+
 }
 
 .container {
@@ -49,29 +63,145 @@ html, body {
    }
 
 #navbar {
+    display: grid;
+    height: 80px;
+    grid-row: 1;
+    align-items: center;
+    grid-template-columns: 0.5fr 2fr;
+
+/* @include tablet {
+    height: 80px;
     grid-area: navbar;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 0.1fr 2fr 1fr 0.5fr 0.2fr;
+} */
+
+@include tablet-ls {
+    height: 113px;
+    grid-area: navbar;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 0.1fr 2fr 1fr 0.5fr 0.2fr;
 }
 
-#logo {
-    display: flex;
-    flex: 1;
+@include desktop {
+    height: 113px;
+    grid-area: navbar;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 0.1fr 2fr 1fr 0.5fr 0.2fr;
 }
+
+}
+
 
 .border-under {
     border-bottom: 1px solid $lightgrey ;
 }
 
+#logo img{
+    height: 3rem;
+
+    @include tablet-ls {
+        height: 2.2rem;
+    }
+}
+
 #company {
-    display: flex;
-    flex: 2;
+    text-align: start;
     font-family: $secondary-font;
     font-weight: $bold;
     font-size: 1.4em;
     text-transform: uppercase;
-    padding: 0 3rem;
+    padding: 0 2rem;
+ 
 
     @include tablet {
-        padding: 0 1rem; 
+        padding: 0 6rem;
+        font-size: 2rem; 
+    }
+
+    @include tablet-ls {
+        padding: 0 1rem;
+        font-size: 1.5rem;
     }
 }
 
+.menu {
+    display: none;
+
+    @include tablet-ls {
+        display: flex;
+    }
+}
+
+.menu ul{
+    display: flex;
+
+    @include tablet-ls {
+        display: flex;
+    }
+
+}
+
+.menu ul li {
+    margin: 0 1rem;
+    cursor: pointer;
+    
+    @include tablet-ls {
+        margin: 0 1rem;
+        cursor: pointer;
+    }
+}
+
+.menu ul li:hover {
+    color: $gradient-endcolor;
+}
+
+.search {
+    display: none;
+
+    @include tablet-ls {
+        display: block;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+.tryitfree {
+    display: none;
+  
+
+    @include tablet-ls {
+        display: flex;
+    font-family: $secondary-font;
+    text-transform: uppercase;
+    font-weight: $medium;
+    justify-content: center;
+    align-items: center;
+    width: 139px;
+    height: 42px;
+    border: 1px solid $date-orange;
+    border-radius: 5px;
+    background-image: none;
+    cursor: pointer;
+    }
+}
+
+.tryitfree:hover{
+    display: none;
+    @include tablet-ls {
+        transition: all 0.5s;
+        background-image: linear-gradient(to right, $gradient-startcolor, $gradient-endcolor);
+    }
+}
+
+.box {
+    padding: 1rem;
+}
+
+#showcase {
+    background-color: $lightgrey;
+    grid-area: showcase;
+}
