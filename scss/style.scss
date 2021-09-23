@@ -1,0 +1,77 @@
+@import "./variables";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.cont-grid {
+    display: grid;
+    grid-template-areas:    'navbar navbar'
+                            'showcase showcase'
+                            'sectionleft sectionright'
+                            'contentleft contentright'
+                            'contact contact'
+                            'latest latest'
+                            'readmore readmore';
+}
+
+.container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    margin-left:auto;
+    margin-right:auto;
+
+    @include tablet {
+        max-width: $breakpoint-tablet-max;
+    }
+
+    @include tablet-ls {
+        max-width: $breakpoint-tablet-ls-max;
+    }
+
+    @include desktop {
+        max-width: $breakpoint-desktop-max;
+    }
+
+}
+
+.border {
+    border: 1px solid #707070;
+   }
+
+#navbar {
+    grid-area: navbar;
+}
+
+#logo {
+    display: flex;
+    flex: 1;
+}
+
+.border-under {
+    border-bottom: 1px solid $lightgrey ;
+}
+
+#company {
+    display: flex;
+    flex: 2;
+    font-family: $secondary-font;
+    font-weight: $bold;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    padding: 0 3rem;
+
+    @include tablet {
+        padding: 0 1rem; 
+    }
+}
+
