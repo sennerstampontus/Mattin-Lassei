@@ -22,6 +22,8 @@ $gradientcolor: linear-gradient(to right, $gradient-startcolor , $gradient-endco
 //
 
 //Breakpoints
+$breakpoint-mobile: 375px;
+$breakpoint-mobile-max: 320px;
 $breakpoint-tablet: 768px;
 $breakpoint-tablet-max: 720px;
 $breakpoint-tablet-ls: 992px;

@@ -1,5 +1,4 @@
 @import "./variables";
-@import "./functions";
 
 * {
     box-sizing: border-box;
@@ -178,16 +177,26 @@ html, body {
     height: 100vh;
 }
 
+#logo:checked~.menu .linkmenu .navlinks {
+    visibility: visible;
+    opacity: 100;
+    top: 0;
+    transition: all 1s;
+    transition-delay: 0.2s;
+}
+
 .menu{
     .linkmenu {
         .navlinks {
             position: relative;
-            top: -200px;
+            top: -50px;
             visibility: hidden;
+            opacity: 0;
             display: block;
             text-align: center;
             margin: 1.4rem 0;
             cursor: pointer;
+            color: $lightgray;
 
             // color: $lightgray;
             
@@ -198,6 +207,8 @@ html, body {
                 cursor: pointer;
                 top: 0;
                 visibility: visible;
+                transition: none;
+                opacity: 100;
             }
         
             @include desktop {
@@ -225,8 +236,9 @@ html, body {
     }
 }
 
-.menu ul li:hover, li:active {
+.menu .linkmenu .navlinks:hover, li:active {
     color: $gradient-endcolor;
+    transition-delay: 0;
 }
 
 .navlinks {
@@ -236,6 +248,8 @@ html, body {
     text-transform: uppercase;
     list-style: none;
     text-decoration: none;
+
+
 }
 
 
