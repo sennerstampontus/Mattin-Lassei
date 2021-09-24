@@ -17,41 +17,44 @@ h1 {
     font-weight: $bold;
 }
 #background {
-    position: fixed;
+    position: relative;
     width: 100%;
     height: 100vh;
+    overflow-x: hidden;
 
     @include desktop {
-        width: 200%;
-        position: fixed;
-        left: 100px;
-    }
-}
-
-#background img {
-    width: 400%;
-    height: 95vh;
-
-    @include tablet-ls {
-        right: px;
-        width: 150%;
-        height: 100vh;
-    }
-    @include desktop {
-        position: fixed;
-        width: 2000px;
-        height: 923px;
-        top: -80px;
+        width: 100%;
+        position: relative;
         left: 0;
     }
 }
 
+#background img {
+    position: relative;
+    width: 200%;
+    height: 95vh;
+    left: -100px;
+    @include tablet-ls {
+        height: 100vh;
+    }
+    @include desktop {
+        position: relative;
+        height: 923px;
+        top: -80px;
+        left: -180px;
+        width: 120%;
+    }
+}
+
 .cont-grid {
-    position: fixed;
+    width: 100%;
+    height: 1000px;
+    position: absolute;
     top: 0;
     left: 0;
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
     grid-template-areas: $gridarea-template;  
 @include tablet-ls {
     grid-template-columns: 1fr 1fr;
@@ -435,17 +438,21 @@ h1 {
     }
 }
 
-.createaccount_btn {
+.content_btn {
     padding: 1rem 0.5rem;
     font-family: $primary-font;
     font-weight: $bold;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 1rem;
     background: $gradientcolor;
     border: 1px solid $date-orange;
     border-radius: 5px;
     cursor: pointer;
     color: white;
+
+    @include tablet {
+        font-size: 1.2rem;
+    }
 
     @include desktop {
         font-size: 1rem;
@@ -453,6 +460,60 @@ h1 {
 
 }
 
-.createaccount_btn:hover {
+.content_btn:hover {
     background: $gradient-endcolor;
+}
+
+#content {
+    display: block;
+    grid-area: content;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    text-align: center;
+
+    @include tablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr 1fr;
+    }
+}
+
+.content-hl {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+
+.content-title {
+    font-family: $secondary-font;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: 8rem;
+}
+
+.content-bread {
+    font-family: $primary-font;
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 1.4rem 0;
+}
+
+.content-tools {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    .content_btn {
+        font-size: 0.7rem;
+        padding: 0.8rem 2rem;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .content-bread {
+        margin: 0.7rem 0;
+    }
+}
+
+.content-border {
+    border-bottom: 1px solid $gradient-startcolor;
+    border-radius: 3px;
+    padding: 0.7rem 0;
 }
