@@ -18,6 +18,7 @@ $date-orange: #FF6803;
 $gradient-startcolor: #EE307A;
 $gradient-endcolor:  #FC8B53;
 $box-color: #414149;
+$gradientcolor: linear-gradient(to right, $gradient-startcolor , $gradient-endcolor);
 //
 
 //Breakpoints
@@ -28,4 +29,15 @@ $breakpoint-tablet-ls-max: 960px;
 $breakpoint-desktop: 1400px;
 $breakpoint-desktop-max: 1320px;
 //
+//Grid area
+$gridarea-template: 
+'navbar navbar'
+'showcase showcase'
+'sectionleft sectionright'
+'contentleft contentright'
+'contact contact'
+'latest latest'
+'readmore readmore';
+
+
 @import "./breakpoints";

@@ -20,18 +20,40 @@ li {
     text-decoration: none;
 }
 
+#background {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+#background img {
+    width: 400%;
+    height: 95vh;
+
+    @include tablet-ls {
+        left:-50px;
+        width: 120%;
+        height: 100vh;
+    }
+    
+}
+
 .cont-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-areas: $gridarea-template;  
 @include tablet-ls {
-    grid-template-areas:    'navbar navbar '
-    'showcase showcase'
-    'sectionleft sectionright'
-    'contentleft contentright'
-    'contact contact'
-    'latest latest'
-    'readmore readmore';
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    top: 0;
+    left: 25px;
+}
 
+@include desktop {
+    left: 250px;
 }
 
 }
@@ -186,14 +208,13 @@ li {
     border-radius: 5px;
     background-image: none;
     cursor: pointer;
+    
     }
 }
 
 .tryitfree:hover{
-    display: none;
     @include tablet-ls {
-        transition: all 0.5s;
-        background-image: linear-gradient(to right, $gradient-startcolor, $gradient-endcolor);
+        background-image: $gradientcolor;
     }
 }
 
