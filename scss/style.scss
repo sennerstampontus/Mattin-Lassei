@@ -22,6 +22,11 @@ h1 {
     height: 100vh;
     overflow-x: hidden;
 
+    @include tablet-ls {
+        width: 200%;
+        left: 0;
+    }
+
     @include desktop {
         width: 100%;
         position: relative;
@@ -361,6 +366,7 @@ h1 {
         width: 500px;
         text-align: start;
         padding-left: 50px;
+        margin-top: 100px;
     }
 
     @include desktop {
@@ -389,8 +395,16 @@ h1 {
     }
 }
 
+.showcaseright {
+    @include desktop {
+    position: relative;
+    top: -60px;
+    }
+}
 
 #imgparent {
+
+
     display: none;
 
     @include tablet-ls {
@@ -403,11 +417,12 @@ h1 {
         justify-content: end;
     }
     @include desktop {
-        top: -100px;
+        top: 0px;
         left: 300px;
         height: 700px;
     }
 }
+
 
 #imgchild {
     display: none;
