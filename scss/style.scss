@@ -44,7 +44,7 @@ h1 {
     overflow-x: hidden;
 
     @include tablet-ls {
-        position: relative;
+        position: absolute;
         width: 100%;
         left: 0;
     }
@@ -63,10 +63,10 @@ h1 {
     left: -100px;
     @include tablet-ls {
         position: absolute;
-        width: 500%;
+        width: 190%;
         height: 100vh;
         top: 0;
-        left: 0;
+        left: 50px;
     }
     @include desktop {
         position: relative;
@@ -371,10 +371,6 @@ h1 {
     margin-top: 25px;
     grid-area: showcase;
     text-align: center;
-
-    @include desktop {
-        
-    }
 }
 
 #showcaseleft {
@@ -407,7 +403,7 @@ h1 {
         text-align: start;
         padding-left: 50px;
         line-height: 1.3;
-        padding-top: 150px;
+        padding-top: 70px;
     }
 }
 
@@ -521,47 +517,169 @@ h1 {
     text-align: center;
 
     @include tablet {
+        display: block;
+    }
+
+    @include tablet-ls {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 0.5fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-area: content;
+        grid-gap: 2rem;
     }
-}
 
-.content-hl {
-    grid-column: 1 / -1;
-    grid-row: 1;
-}
+    @include desktop {
+        grid-template-columns: 1fr 1fr 1fr;
+        // grid-column-gap: 9rem;
+        margin-left: 50px;
+    }
+    .content-hl {
+        grid-column: 1 / -1;
+        grid-row: 1;
 
-.content-title {
-    font-family: $secondary-font;
-    font-size: 1.4rem;
-    text-align: center;
-    margin-top: 8rem;
-}
+        @include desktop {
+            grid-column: 1;
+            grid-row: 1;
+            justify-content: flex-start;
+        }
+    }
 
-.content-bread {
-    font-family: $primary-font;
-    font-size: 0.8rem;
-    text-align: center;
-    margin: 1.4rem 0;
-}
+    .content-title {
+        font-family: $secondary-font;
+        font-size: 1.4rem;
+        text-align: center;
+        margin-top: 8rem;
 
-.content-tools {
-    grid-column: 1 / -1;
-    grid-row: 2;
+        @include tablet {
+            font-size: 2.5rem;
+        }
+
+        @include desktop {
+            font-size: 2.1rem;
+            text-align: start;
+            margin-bottom: -0.8rem;
+            padding-right: 75px;
+        }
+    }
+
+    .content-bread {
+        font-family: $primary-font;
+        font-size: 0.8rem;
+        text-align: center;
+        margin: 1.4rem 0;
+
+        @include tablet {
+            font-size: 1.3rem;
+        }
+
+        @include desktop {
+            text-align: start;
+            font-size: 0.8em;
+            margin-bottom: -20px;
+        }
+    }
+
+    .tools-title {
+        @include tablet {
+            font-size: 1.5rem;
+        }
+
+        @include desktop {
+            font-size: 1rem;
+            margin-bottom: -10px;
+        }
+    }
+
+    .content-border {
+        border-bottom: 1px solid $gradient-startcolor;
+        border-radius: 3px;
+        padding: 0.7rem 0;
+
+        @include desktop {
+            border: none;
+        }
+    }
+
+    #page_faster {
+
+        @include desktop {
+            grid-column: 2;
+            grid-row: 1;
+            text-align: start;
+            width: 70%;
+        }
+
+    }
+    #site_ranking {
+
+        @include desktop {
+        grid-column: 3;
+        grid-row: 1;
+        text-align: start;
+        width: 70%;
+        }
+    }
+    #global_award {
+
+        @include desktop {
+        grid-column: 2;
+        grid-row: 2;
+        text-align: start;
+        width: 70%;
+        margin-top: -150px;
+        }
+    }
+    #safe_secure {
+
+        @include desktop {
+        grid-column: 3;
+        grid-row: 2;
+        text-align: start;
+        width: 70%;
+        margin-top: -150px;
+        }
+    }
+
     .content_btn {
         font-size: 0.7rem;
         padding: 0.8rem 2rem;
         text-align: center;
-        margin-top: 1rem;
-    }
-    .content-bread {
-        margin: 0.7rem 0;
-    }
-}
+        margin: 1rem;
+        
+            @include tablet {
+                font-size: 1.3rem;
+            }
+                
+            @include tablet-ls {
+                grid-column: 1 / -1;
+                width: 50%;
+                justify-self: center;
+            }
 
-.content-border {
-    border-bottom: 1px solid $gradient-startcolor;
-    border-radius: 3px;
-    padding: 0.7rem 0;
+            @include desktop {
+                grid-column: 1;
+                grid-row: 2;
+                font-size: 0.6rem;
+                width: 35%;
+                padding: 10px 10px;
+                height: auto;
+                align-self: flex-start;
+                justify-self: start;
+                text-align: center;
+                margin-left: -2px;
+                margin-top: 10px;
+            }
+        }
+        
+    img {
+        width: 70px;
+        
+        @include tablet {
+            width: 100px;
+                }
+        
+        @include desktop {
+            width: 70px;
+        }
+    }
 }
