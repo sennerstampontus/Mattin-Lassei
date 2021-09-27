@@ -32,7 +32,7 @@ $breakpoint-desktop: 1400px;
 $breakpoint-desktop-max: 1320px;
 //
 //Grid area
-$gridarea-template: 
+$gridarea-template-ls: 
 'navbar navbar'
 'showcase showcase'
 'content content'
@@ -40,6 +40,16 @@ $gridarea-template:
 'contact contact'
 'latest latest'
 'readmore readmore';
+
+$grid-template-mobile:
+'navbar'
+'showcase'
+'content'
+'process'
+'contact'
+'latest'
+'readmore';
+
 
 
 @import "./breakpoints";

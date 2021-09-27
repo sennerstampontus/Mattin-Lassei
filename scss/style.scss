@@ -16,62 +16,6 @@ h1 {
     font-family: $secondary-font;
     font-weight: $bold;
 }
-#background {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow-x: hidden;
-
-    @include tablet-ls {
-        width: 200%;
-        left: 0;
-    }
-
-    @include desktop {
-        width: 100%;
-        position: relative;
-        left: 0;
-    }
-}
-
-#background img {
-    position: relative;
-    width: 200%;
-    height: 95vh;
-    left: -100px;
-    @include tablet-ls {
-        height: 100vh;
-    }
-    @include desktop {
-        position: relative;
-        height: 923px;
-        top: -80px;
-        left: -180px;
-        width: 120%;
-    }
-}
-
-.cont-grid {
-    width: 100%;
-    height: 1000px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto;
-    grid-template-areas: $gridarea-template;  
-@include tablet-ls {
-    grid-template-columns: 1fr 1fr;
-    position: absolute;
-    top: 0;
-    left: 100px;
-}
-
-@include desktop {
-    left: 250px;
-    }
-}
 
 .container {
     width: 100%;
@@ -93,6 +37,76 @@ h1 {
         max-width: $breakpoint-desktop-max;
     }
 }
+#background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+
+    @include tablet-ls {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    @include desktop {
+        width: 100%;
+        position: relative;
+        left: 0;
+    }
+}
+
+#background img {
+    position: relative;
+    width: 200%;
+    height: 80vh;
+    left: -100px;
+    @include tablet-ls {
+        position: absolute;
+        width: 500%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+    }
+    @include desktop {
+        position: relative;
+        height: 923px;
+        top: -80px;
+        left: -180px;
+        width: 120%;
+    }
+}
+
+.cont-grid {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: $grid-template-mobile;  
+
+@include tablet {
+    left: 25px;
+}
+
+@include tablet-ls {
+    grid-template-areas: $gridarea-template-ls;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    top: 0;
+    left: 200px;
+
+}
+
+@include desktop {
+    left: 250px;
+    }
+}
+
+
 
 .border {
     border: 1px solid #707070;
@@ -101,21 +115,27 @@ h1 {
 #navbar {
     display: grid;
     height: 80px;
-    grid-row: 1;
+    width: 100%;
     align-items: center;
-    grid-template-columns: 0.5fr 2fr;
+    grid-area: navbar;
 
 @include tablet-ls {
     height: 113px;
     grid-area: navbar;
-    grid-template-columns: 0.1fr 2fr 1fr 0.5fr 0.2fr;
+    grid-column: 1 / -1;
 }
 
 @include desktop {
     height: 113px;
-    grid-template-columns: 0.1fr 2fr 1fr 0.5fr 0.2fr;
+    grid-column: 1 / -1;
     grid-template-rows: 1fr;
     }
+}
+
+.navstyle {
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -127,6 +147,17 @@ h1 {
     display: none;
 }
 
+.navstyle .logoimg {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet-ls {
+        justify-content: flex-start;
+    }
+}
+
 .logoimg img{
     height: 2.5rem;
 
@@ -136,6 +167,7 @@ h1 {
 
     @include tablet-ls {
         height: 2.2rem;
+        margin-top: 15px;
     }
 }
 
@@ -157,12 +189,12 @@ h1 {
     @include tablet-ls {
         padding: 0 1rem;
         font-size: 1.5rem;
+        margin-top: 15px;
     }
 }
 
 .menu {
-    display: block;
-    position: relative;
+ 
     @include tablet-ls {
         display: flex;
     }
@@ -179,109 +211,102 @@ h1 {
     transition: height 0.5s;
 
     @include tablet-ls {
+        position: static;
         display: flex;
-        position: absolute;
         background: none;
-        width: 0;
-        height: 0;
-        top: -10px;
-        left: -210px;
+        top: 0;
+        left: 0;
     }
 
     @include desktop {
-        display: flex;
-        position: absolute;
+        position: static;
         background: none;
-        width: 0;
-        height: 0;
-        top: -10px;
-        left: -70px;
+        top: 0;
+        left: 0;
     }
 }
 
-#logo:checked~.menu .linkmenu{
+#logo:checked ~ .menu .linkmenu{
     height: 100vh;
+
+    @include tablet-ls {
+        height: 0vh;
+    }
 }
 
 #logo:checked~.menu .linkmenu .navlinks {
     visibility: visible;
     opacity: 100;
     top: 0;
-    transition: all 1s;
+    transition: opacity 1s;
     transition-delay: 0.2s;
 }
 
-.menu{
-    .linkmenu {
-        .navlinks {
-            position: relative;
-            top: -50px;
-            visibility: hidden;
-            opacity: 0;
-            display: block;
-            text-align: center;
-            margin: 1.4rem 0;
-            cursor: pointer;
-            color: $lightgray;
 
-            // color: $lightgray;
+    .menu{
+        .linkmenu {
+            .navlinks {
+                position: relative;
+                top: -50px;
+                visibility: hidden;
+                opacity: 0;
+                display: block;
+                text-align: center;
+                margin: 1.4rem 0;
+                cursor: pointer;
+                color: $lightgray;
+                font-size: 1rem;
+                font-family: $primary-font;
+                font-weight: $medium;
+                text-transform: uppercase;
+                list-style: none;
+                text-decoration: none;
+                
+    
+                // color: $lightgray;
+                
+                @include tablet {
+                    font-size: 2rem;
+                }
+    
+                @include tablet-ls {
+                    position: static;
+                    color: $primary-text-color;
+                    font-size: 0.8rem;
+                    margin: 0 1rem;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    visibility: visible;
+                    transition: none;
+                    opacity: 100;
+                }
             
-            @include tablet {
-                font-size: 2rem;
-            }
-
-            @include tablet-ls {
-                color: $primary-text-color;
-                font-size: 0.8rem;
-                margin: 0 1rem;
-                cursor: pointer;
-                top: 0;
-                visibility: visible;
-                transition: none;
-                opacity: 100;
-            }
-        
-            @include desktop {
-                margin: 0 1rem;
-                cursor: pointer;
+                @include desktop {
+                    margin: 0 1rem;
+                    cursor: pointer;
+                }
             }
         }
-    }
-    display: block;
-    text-align: center;
-    margin: 1.4rem 0;
-    cursor: pointer;
-    // color: $lightgray;
-    
-    @include tablet-ls {
-        color: $primary-text-color;
-        font-size: 0.8rem;
-        margin: 0 1rem;
+        display: block;
+        text-align: center;
+        margin: 1.4rem 0;
         cursor: pointer;
+        // color: $lightgray;
+        
+        @include tablet-ls {
+            color: $primary-text-color;
+            font-size: 0.8rem;
+            margin: 0 1rem;
+            cursor: pointer;
+        }
     }
 
-    @include desktop {
-        margin: 0 1rem;
-        cursor: pointer;
-    }
-}
 
 .menu .linkmenu .navlinks:hover, li:active {
     color: $gradient-endcolor;
     transition-delay: 0;
 }
-
-.navlinks {
-    font-size: 1rem;
-    font-family: $primary-font;
-    font-weight: $medium;
-    text-transform: uppercase;
-    list-style: none;
-    text-decoration: none;
-
-
-}
-
 
 .search {
     display: none;
@@ -294,6 +319,7 @@ h1 {
         display: block;
         text-align: center;
         cursor: pointer;
+        margin-top: 30px;
     }
 }
 
@@ -302,15 +328,22 @@ h1 {
   
 
     @include tablet-ls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 139px;
-    height: 43px;
+    align-self: center;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 5px;
+    margin-top: 20px;
     border: 1px solid $date-orange;
     border-radius: 5px;
     background: none;
     cursor: pointer;
+    width: 50%;
+    }
+
+    @include desktop {
+        width: 25%;
+        padding: 8px 5px;
+        margin-left: 30px;
     }
 }
 
