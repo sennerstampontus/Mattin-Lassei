@@ -85,7 +85,7 @@ h1 {
     left: 0;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto;
+    // grid-template-rows: auto auto auto auto auto auto;
     grid-template-areas: $grid-template-mobile;  
 
 @include tablet {
@@ -97,12 +97,12 @@ h1 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto auto auto;
     top: 0;
-    left: 200px;
+    left: 250px;
 
 }
 
 @include desktop {
-    left: 250px;
+    left: 300px;
     }
 }
 
@@ -328,16 +328,16 @@ h1 {
   
 
     @include tablet-ls {
-    align-self: center;
-    display: inline-block;
-    text-align: center;
-    padding: 10px 5px;
-    margin-top: 20px;
-    border: 1px solid $date-orange;
-    border-radius: 5px;
-    background: none;
-    cursor: pointer;
-    width: 50%;
+        align-self: center;
+        display: inline-block;
+        text-align: center;
+        padding: 10px 5px;
+        margin-top: 20px;
+        border: 1px solid $date-orange;
+        border-radius: 5px;
+        background: none;
+        cursor: pointer;
+        width: 50%;
     }
 
     @include desktop {
@@ -691,6 +691,7 @@ h1 {
     display: grid;
     grid-area: process;
     grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
     margin-top: 2rem;
 
 
@@ -699,6 +700,10 @@ h1 {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 300px 300px 300px 300px;
         column-gap: 1rem;
+    }
+
+    @include desktop {
+        grid-template-columns: 1.5fr 1.2fr;
     }
 
     .box {
@@ -719,6 +724,11 @@ h1 {
             grid-column: 1;
             grid-row: 2;
         }
+
+        @include desktop {
+            top: -100px;
+            left: 0;
+        }
     }
 
     .process-content {
@@ -728,19 +738,48 @@ h1 {
             font-size: 1.1rem;
             margin: 2rem;
 
-            @include tablet {
-                font-size: 1.3rem;
-                text-align: center;
-            }
+
 
             @include tablet-ls {
                 display: grid;
                 grid-column: 2;
-                font-size: 1.5rem;
-                text-align: start;
+            }
+
+            @include desktop {
+                width: 75%;
+            }
+
+            .content-hl {
+                @include tablet {
+                    font-size: 1.3rem;
+                    text-align: center;
+                }
+
+                @include tablet-ls {
+                    font-size: 1.5rem;
+                    text-align: start;
+                }
+                @include desktop {
+                    font-size: 1.2rem;
+                    line-height: 1.1;
+                    font-family: $secondary-font;
+                    font-weight: $bold;
+                }
+
+                span::before {
+                    @include desktop {
+                        content: "\A";
+                        white-space: pre;
+                    }
+                }
+                span::after {
+                    @include desktop {
+                        content: "\A";
+                        white-space: pre;
+                    }
+                }
             }
     }
-
     .pr-items-1{
         display: grid;
         grid-template-columns: 0.5fr 1.6fr;
@@ -760,61 +799,8 @@ h1 {
             grid-column: 1;
             column-gap: 2rem;
         }
-        .pr-number {
-            grid-column: 1;
-            grid-row: 1;
-            font-size: 1.5rem;
-            padding-right: 1rem;
-            color: $numbers-pink;
-            font-family: $secondary-font;
-            font-weight: $bold;
-            text-align: start;
-
-            @include tablet {
-                grid-column: 1;
-                grid-row: 2;
-                text-align: center;
-                font-size: 3.4rem;
-            }
-
-            @include tablet-ls {
-                grid-column: 1;
-                grid-row: 1;
-            }
-        }
-        .pr-title {
-            grid-column: 2;
-            grid-row: 1;
-            font-size: 1.2rem;
-            font-weight: $semi-bold;
-            text-align: start;
-
-            @include tablet {
-                font-size: 1.7rem;
-                align-self: center;
-            }
-
-            @include tablet-ls {
-                grid-column: 2;
-                grid-row: 1;
-                font-size: 1.6rem;
-            }
-        }
-        .pr-bread {
-            grid-column: 1 /-1;
-            text-align: start;
-            margin-top: 1rem;
-
-            @include tablet {
-                grid-column: 2;
-            }
-
-            @include tablet-ls {
-                grid-column: 2;
-                grid-row: 2;
-                margin-top: 0.5rem;
-                font-size: 1.2rem;
-            }
+        @include desktop {
+            margin-top: 2rem;
         }
     }
     
@@ -838,61 +824,8 @@ h1 {
             grid-row: 3;
             column-gap: 2rem;
         }
-        .pr-number {
-            grid-column: 1;
-            grid-row: 1;
-            font-size: 1.5rem;
-            padding-right: 1rem;
-            color: $numbers-pink;
-            font-family: $secondary-font;
-            font-weight: $bold;
-            text-align: start;
-
-            @include tablet {
-                grid-column: 1;
-                grid-row: 2;
-                text-align: center;
-                font-size: 3.4rem;
-            }
-
-            @include tablet-ls {
-                grid-column: 1;
-                grid-row: 2;
-            }
-        }
-        .pr-title {
-            grid-column: 2;
-            grid-row: 1;
-            font-size: 1.2rem;
-            font-weight: $semi-bold;
-            text-align: start;
-
-            @include tablet {
-                font-size: 1.7rem;
-                align-self: center;
-            }
-
-            @include tablet-ls {
-                grid-column: 2;
-                grid-row: 2;
-                font-size: 1.6rem;
-            }
-        }
-        .pr-bread {
-            text-align: start;
-            margin-top: 1rem;
-            grid-column: 1 / -1;
-            grid-row: 2;
-
-            @include tablet {
-                grid-column: 2;
-            }
-            @include tablet-ls {
-                grid-column: 2;
-                grid-row: 3;
-                margin-top: 0.5rem;
-                font-size: 1.2rem;
-            }
+        @include desktop {
+            margin:0;
         }
     }
 
@@ -916,62 +849,97 @@ h1 {
             grid-row: 4;
             column-gap: 2rem;
         }
-        .pr-number {
-            grid-column: 1;
-            grid-row: 1;
-            font-size: 1.5rem;
-            padding-right: 1rem;
-            color: $numbers-pink;
-            font-family: $secondary-font;
-            font-weight: $bold;
-            text-align: start;
-
-            @include tablet {
-                grid-column: 1;
-                grid-row: 2;
-                text-align: center;
-                font-size: 3.4rem;
-            }
-
-            @include tablet-ls {
-                grid-column: 1;
-                grid-row: 3;
-            }
-        }
-        .pr-title {
-            grid-column: 2;
-            grid-row: 1;
-            font-size: 1.2rem;
-            font-weight: $semi-bold;
-            text-align: start;
-
-            @include tablet {
-                font-size: 1.7rem;
-                align-self: center;
-            }
-
-            @include tablet-ls {
-                grid-column: 2;
-                grid-row: 3;
-                font-size: 1.6rem;
-            }
-        }
-        .pr-bread {
-            text-align: start;
-            margin-top: 1rem;
-            grid-column: 1 / -1;
-            grid-row: 2;
-
-            @include tablet {
-                grid-column: 2;
-            }
-
-            @include tablet-ls {
-                grid-column: 2;
-                grid-row: 4;
-                margin-top: 0.5rem;
-                font-size: 1.2rem;
-            }
+        @include desktop {
+            margin:0;
         }
     }
+}
+
+.border-pr-items{
+
+    border-bottom: 2px solid $gradient-endcolor;
+    border-bottom-style: dotted;
+
+    @include tablet {
+        border-left: 2px solid $gradient-endcolor;
+        border-left-style: dotted;
+        border-bottom: none;
+    }
+    @include tablet-ls {
+        border: none;
+    }
+
+}
+
+.pr-number {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 1.5rem;
+    padding-right: 1rem;
+    color: $numbers-pink;
+    font-family: $secondary-font;
+    font-weight: $bold;
+    text-align: start;
+
+    @include tablet {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: center;
+        font-size: 3.4rem;
+    }
+
+    @include tablet-ls {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    @include desktop {
+        font-size: 2.3rem;
+        padding-top: 18px;
+    }
+}
+.pr-title {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.2rem;
+    font-weight: $semi-bold;
+    text-align: start;
+
+    @include tablet {
+        font-size: 1.7rem;
+        align-self: center;
+    }
+
+    @include tablet-ls {
+        grid-column: 2;
+        grid-row: 3;
+        font-size: 1.6rem;
+    }
+    @include desktop {
+        font-size: 1.1rem;
+    }
+}
+.pr-bread {
+    text-align: start;
+    margin-top: 1rem;
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    @include tablet {
+        grid-column: 2;
+    }
+
+    @include tablet-ls {
+        grid-column: 2;
+        grid-row: 4;
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+    }
+    @include desktop {
+        font-size: 1rem;
+        margin-top: 0;
+    }
+}
+
+#contact {
+    grid-area: contact;
 }
