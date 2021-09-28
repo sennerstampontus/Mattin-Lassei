@@ -696,6 +696,7 @@ h1 {
 
 
     @include tablet-ls {
+        margin-top: 5rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 300px 300px 300px 300px;
@@ -942,6 +943,10 @@ h1 {
 
 #contact {
     position: relative;
+
+    @include tablet {
+        margin-top: 5rem;
+    }
         img {
             display: none;
 
