@@ -685,3 +685,293 @@ h1 {
         }
     }
 }
+
+#process {
+
+    display: grid;
+    grid-area: process;
+    grid-template-columns: 1fr 2fr;
+    margin-top: 2rem;
+
+
+    @include tablet-ls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 300px 300px 300px;
+        column-gap: 1rem;
+    }
+
+    .box {
+        display: none;
+
+        @include tablet {
+            display: none;
+        }
+
+        @include tablet-ls {
+            position: relative;
+            top: 0;
+            left: -80px;
+            display: block;
+            width: 500px;
+            height: 375px;
+            background-color: $box-color;
+            grid-column: 1;
+            grid-row: 2;
+        }
+    }
+
+    .process-content {
+            grid-column: 1 / -1;
+            grid-row: 1;
+            text-align: center;
+            font-size: 1.1rem;
+            margin: 2rem;
+
+            @include tablet {
+                font-size: 1.3rem;
+                text-align: center;
+            }
+
+            @include tablet-ls {
+                display: grid;
+                grid-column: 2;
+                font-size: 1.5rem;
+                text-align: start;
+            }
+    }
+
+    .pr-items-1{
+        display: grid;
+        grid-template-columns: 0.5fr 1.6fr;
+        grid-row: auto auto;
+        grid-column: 1 / -1;
+        text-align: center;
+        margin: 2rem 0;
+
+        @include tablet {
+            grid-template-columns: 1fr 1fr;
+            grid-column: 1 / -1;
+            grid-row: 2;
+        }
+
+        @include tablet-ls {
+            grid-template-columns: 1fr;
+            grid-column: 1;
+            column-gap: 2rem;
+        }
+        .pr-number {
+            grid-column: 1;
+            grid-row: 1;
+            font-size: 1.5rem;
+            padding-right: 1rem;
+            color: $numbers-pink;
+            font-family: $secondary-font;
+            font-weight: $bold;
+            text-align: start;
+
+            @include tablet {
+                grid-column: 1;
+                grid-row: 2;
+                text-align: center;
+                font-size: 3.4rem;
+            }
+
+            @include tablet-ls {
+                grid-column: 1;
+                grid-row: 1;
+            }
+        }
+        .pr-title {
+            grid-column: 2;
+            grid-row: 1;
+            font-size: 1.2rem;
+            font-weight: $semi-bold;
+            text-align: start;
+
+            @include tablet {
+                font-size: 1.7rem;
+                align-self: center;
+            }
+
+            @include tablet-ls {
+                grid-column: 2;
+                grid-row: 1;
+                font-size: 1.6rem;
+            }
+        }
+        .pr-bread {
+            grid-column: 1 /-1;
+            text-align: start;
+            margin-top: 1rem;
+
+            @include tablet {
+                grid-column: 2;
+            }
+
+            @include tablet-ls {
+                grid-column: 2;
+                grid-row: 2;
+                margin-top: 0.5rem;
+                font-size: 1.2rem;
+            }
+        }
+    }
+    
+    .pr-items-2{
+        display: grid;
+        grid-template-columns: 0.5fr 1.6fr;
+        grid-row: auto auto;
+        grid-column: 1 / -1;
+        text-align: center;
+        margin: 2rem 0;
+
+        @include tablet {
+            grid-template-columns: 1fr 1fr;
+            grid-column: 1 / -1;
+            grid-row: 2;
+        }
+
+        @include tablet-ls {
+            grid-template-columns: 1fr;
+            grid-column: 1;
+            grid-row: 3;
+            column-gap: 2rem;
+        }
+        .pr-number {
+            grid-column: 1;
+            grid-row: 1;
+            font-size: 1.5rem;
+            padding-right: 1rem;
+            color: $numbers-pink;
+            font-family: $secondary-font;
+            font-weight: $bold;
+            text-align: start;
+
+            @include tablet {
+                grid-column: 1;
+                grid-row: 2;
+                text-align: center;
+                font-size: 3.4rem;
+            }
+
+            @include tablet-ls {
+                grid-column: 1;
+                grid-row: 2;
+            }
+        }
+        .pr-title {
+            grid-column: 2;
+            grid-row: 1;
+            font-size: 1.2rem;
+            font-weight: $semi-bold;
+            text-align: start;
+
+            @include tablet {
+                font-size: 1.7rem;
+                align-self: center;
+            }
+
+            @include tablet-ls {
+                grid-column: 2;
+                grid-row: 2;
+                font-size: 1.6rem;
+            }
+        }
+        .pr-bread {
+            text-align: start;
+            margin-top: 1rem;
+            grid-column: 1 / -1;
+            grid-row: 2;
+
+            @include tablet {
+                grid-column: 2;
+            }
+            @include tablet-ls {
+                grid-column: 2;
+                grid-row: 3;
+                margin-top: 0.5rem;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .pr-items-3{
+        display: grid;
+        grid-template-columns: 0.5fr 1.6fr;
+        grid-row: auto auto;
+        grid-column: 1 / -1;
+        text-align: center;
+        margin: 2rem 0;
+
+        @include tablet {
+            grid-template-columns: 1fr 1fr;
+            grid-column: 1 / -1;
+            grid-row: 2;
+        }
+
+        @include tablet-ls {
+            grid-template-columns: 1fr;
+            grid-column: 1;
+            grid-row: 4;
+            column-gap: 2rem;
+        }
+        .pr-number {
+            grid-column: 1;
+            grid-row: 1;
+            font-size: 1.5rem;
+            padding-right: 1rem;
+            color: $numbers-pink;
+            font-family: $secondary-font;
+            font-weight: $bold;
+            text-align: start;
+
+            @include tablet {
+                grid-column: 1;
+                grid-row: 2;
+                text-align: center;
+                font-size: 3.4rem;
+            }
+
+            @include tablet-ls {
+                grid-column: 1;
+                grid-row: 3;
+            }
+        }
+        .pr-title {
+            grid-column: 2;
+            grid-row: 1;
+            font-size: 1.2rem;
+            font-weight: $semi-bold;
+            text-align: start;
+
+            @include tablet {
+                font-size: 1.7rem;
+                align-self: center;
+            }
+
+            @include tablet-ls {
+                grid-column: 2;
+                grid-row: 3;
+                font-size: 1.6rem;
+            }
+        }
+        .pr-bread {
+            text-align: start;
+            margin-top: 1rem;
+            grid-column: 1 / -1;
+            grid-row: 2;
+
+            @include tablet {
+                grid-column: 2;
+            }
+
+            @include tablet-ls {
+                grid-column: 2;
+                grid-row: 4;
+                margin-top: 0.5rem;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
