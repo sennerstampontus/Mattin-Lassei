@@ -32,14 +32,9 @@ $breakpoint-desktop: 1200px;
 $breakpoint-desktop-max: 1170px;
 //
 //Grid area
-$gridarea-template-ls: 
-'navbar navbar'
-'showcase showcase'
-'content content'
-'process process'
-'contact contact'
-'latest latest'
-'readmore readmore';
+$grid-template-ls: 
+"navbar navbar""showcase showcase""content content""process process" "contact contact" "latest latest" "readmore readmore"
+;
 
 $grid-template-mobile:
 'navbar'
@@ -48,7 +43,8 @@ $grid-template-mobile:
 'process'
 'contact'
 'latest'
-'readmore';
+'readmore'
+;
 
 
 
