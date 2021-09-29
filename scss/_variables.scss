@@ -12,12 +12,12 @@ $bold: 700;
 //Colors
 $primary-text-color: #252525;
 $secondary-text-color: #57647C;
-$lightgray: #d0d2d6;
 $numbers-pink:  #F23779;
 $date-orange: #FF6803;
 $gradient-startcolor: #EE307A;
 $gradient-endcolor:  #FC8B53;
 $box-color: #414149;
+$lightgray: #d0d2d6;
 $gradientcolor: linear-gradient(to right, $gradient-startcolor , $gradient-endcolor);
 //
 
@@ -28,8 +28,8 @@ $breakpoint-tablet: 768px;
 $breakpoint-tablet-max: 720px;
 $breakpoint-tablet-ls: 1024px;
 $breakpoint-tablet-ls-max: 996px;
-$breakpoint-desktop: 1400px;
-$breakpoint-desktop-max: 1320px;
+$breakpoint-desktop: 1200px;
+$breakpoint-desktop-max: 1170px;
 //
 //Grid area
 $gridarea-template-ls: 
