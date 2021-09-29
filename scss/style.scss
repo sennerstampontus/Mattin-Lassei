@@ -118,17 +118,21 @@ h1 {
     width: 100%;
     align-items: center;
     grid-area: navbar;
+    grid-row:1;
+    grid-column: 1 / -1;
 
 @include tablet-ls {
     height: 113px;
     grid-area: navbar;
     grid-column: 1 / -1;
+    grid-row:1;
 }
 
 @include desktop {
     height: 113px;
     grid-column: 1 / -1;
     grid-template-rows: 1fr;
+    grid-row:1;
     }
 }
 
@@ -372,6 +376,8 @@ h1 {
     margin-top: 25px;
     grid-area: showcase;
     text-align: center;
+    grid-row: 2;
+    grid-column: 1 /-1;
 }
 
 #showcaseleft {
@@ -402,7 +408,7 @@ h1 {
     @include desktop {
         font-size: 3rem;
         text-align: start;
-        padding-left: 50px;
+        padding-left: 0;
         line-height: 1.3;
         padding-top: 70px;
     }
@@ -421,7 +427,9 @@ h1 {
         font-size: 1rem;
         text-align: start;
         width: 500px;
-        padding-left: 15px;
+        padding-top: 1rem;
+        padding-left: 0;
+        margin: 0;
     }
 }
 
@@ -475,11 +483,12 @@ h1 {
 #createaccount {
     margin:0;
     @include tablet {
-        margin: 2rem 0;   
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 
     @include desktop {
-        margin-right: 250px;
+        margin-left: -15.5rem;
     }
 }
 
@@ -517,6 +526,8 @@ h1 {
     width: 100%;
     height: auto;
     text-align: center;
+    grid-row:3;
+    grid-column: 1 / -1;
 
     @include tablet {
         display: block;
@@ -528,12 +539,14 @@ h1 {
         grid-template-rows: auto auto auto auto;
         grid-area: content;
         grid-gap: 2rem;
+        grid-row: 3;
+        grid-column: 1 / -1;
     }
 
     @include desktop {
         grid-template-columns: 1fr 1fr 1fr;
         // grid-column-gap: 9rem;
-        margin-left: 50px;
+        column-gap: 5rem;
     }
     .content-hl {
         grid-column: 1 / -1;
@@ -694,7 +707,8 @@ h1 {
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
     margin-top: 2rem;
-
+    grid-row: 4;
+    grid-column: 1 / -1;
 
     @include tablet-ls {
         margin-top: 5rem;
@@ -946,7 +960,21 @@ h1 {
 
 #contact {
  position: relative;
+ grid-row: 5;
+ grid-column: 1 / -1;
 
+    @include tablet {
+        margin-top: 5rem;
+    }
+
+    @include tablet-ls {
+        margin-left: 80px;
+    }
+
+    @include desktop {
+        margin-top: -8rem;
+        margin-left: 0;
+    }  
     .div-cont-bg {
         position: absolute;
         top: 0;
@@ -994,21 +1022,6 @@ h1 {
     }
  
 
-
-
-
-    @include tablet {
-        margin-top: 5rem;
-    }
-
-    @include tablet-ls {
-        margin-left: 80px;
-    }
-
-    @include desktop {
-        margin-top: -8rem;
-        margin-left: 0;
-    }
 
         img {
             display: none;
