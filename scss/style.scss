@@ -86,23 +86,24 @@ h1 {
     display: grid;
     grid-template-columns: 1fr;
     // grid-template-rows: auto auto auto auto auto auto;
-    grid-template-areas: $grid-template-mobile;  
+    grid-template-areas: $grid-template-mobile; 
+    overflow-x: hidden; 
 
-@include tablet {
-    left: 25px;
-}
+    @include tablet {
+        left: 30px;
+    }
 
 @include tablet-ls {
     grid-template-areas: $gridarea-template-ls;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto auto auto;
     top: 0;
-    left: 250px;
-
+    left: 15px;
 }
 
 @include desktop {
     left: 360px;
+    overflow-x: unset;
     }
 }
 
@@ -124,13 +125,11 @@ h1 {
 @include tablet-ls {
     height: 113px;
     grid-area: navbar;
-    grid-column: 1 / -1;
     grid-row:1;
 }
 
 @include desktop {
     height: 113px;
-    grid-column: 1 / -1;
     grid-template-rows: 1fr;
     grid-row:1;
     }
@@ -252,6 +251,7 @@ h1 {
             .navlinks {
                 position: relative;
                 top: -50px;
+                left:0;
                 visibility: hidden;
                 opacity: 0;
                 display: block;
@@ -398,10 +398,9 @@ h1 {
     }
 
     @include tablet-ls {
-        font-size: 2.7rem;
+        font-size: 2.5rem;
         width: 500px;
         text-align: start;
-        padding-left: 50px;
         margin-top: 100px;
     }
 
@@ -421,7 +420,9 @@ h1 {
     }
 
     @include tablet-ls {
-        font-size: 1.2rem;
+        margin: 0;
+        font-size: 1rem;
+        text-align: start;
     }
     @include desktop {
         font-size: 1rem;
@@ -434,6 +435,7 @@ h1 {
 }
 
 .showcaseright {
+
     @include desktop {
     position: relative;
     top: -60px;
@@ -441,15 +443,13 @@ h1 {
 }
 
 #imgparent {
-
-
     display: none;
 
     @include tablet-ls {
         display: flex;
         position: relative;
         top: 0;
-        left: 100px;
+        left: 0;
         width: 100%;
         height: 600px;
         justify-content: end;
@@ -519,6 +519,17 @@ h1 {
     background: $gradient-endcolor;
 }
 
+.content-title {
+    font-family: $secondary-font;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.content-bread {
+    font-family: $primary-font;
+    font-size: 0.8rem;
+    text-align: center;
+}
 #content {
     display: block;
     grid-area: content;
@@ -641,7 +652,7 @@ h1 {
         grid-row: 2;
         text-align: start;
         width: 70%;
-        margin-top: -150px;
+        margin-top: -100px;
         }
     }
     #safe_secure {
@@ -651,7 +662,7 @@ h1 {
         grid-row: 2;
         text-align: start;
         width: 70%;
-        margin-top: -150px;
+        margin-top: -100px;
         }
     }
 
@@ -682,7 +693,7 @@ h1 {
                 justify-self: start;
                 text-align: center;
                 margin-left: -2px;
-                margin-top: 10px;
+                margin-top: 0px;
                 border: none;
             }
         }
@@ -962,18 +973,14 @@ h1 {
  position: relative;
  grid-row: 5;
  grid-column: 1 / -1;
+ 
 
     @include tablet {
         margin-top: 5rem;
     }
 
-    @include tablet-ls {
-        margin-left: 80px;
-    }
-
     @include desktop {
         margin-top: -8rem;
-        margin-left: 0;
     }  
     .div-cont-bg {
         position: absolute;
@@ -1016,8 +1023,6 @@ h1 {
                 top: -30px;
                 left: -258px;
             }
-        
-
         }
     }
  
@@ -1195,4 +1200,84 @@ h1 {
             }
         }
     }
+}
+
+#news-hl {
+    margin-top: 5rem;
+    grid-row: 6;
+    grid-column: 1 / -1;
+    text-align: center;
+    h1{
+        margin-left:0.2rem;
+        margin-right:0.2rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+#read-more {
+    margin-top: 3rem;
+    grid-row: 7;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+} 
+
+.read-more-content {
+    text-align: center;
+    
+    .dates {
+        margin-top: 0.5rem;
+        font-family: $secondary-font;
+        font-weight: $regular;
+        font-size: 0.8rem;
+        text-align: start;
+        padding-left: 45px;
+        color: $date-orange;
+    }
+    .content-title {
+        text-align: start;
+        padding-left: 45px;
+    }
+
+    .content-bread{
+        text-align: start;
+        padding-left: 47px;
+        padding-right: 25px;
+        margin-bottom: 0.8rem;
+    }
+
+    .readmore_btn {
+        text-align: center;
+        padding-bottom: 20px;
+        .content_btn {
+            padding: 0.6rem 1.2rem;
+            font-family: $primary-font;
+            font-weight: $bold;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            background: $gradientcolor;
+            border: 1px solid $date-orange;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+        }
+    }
+ 
+    .news-title {
+        font-size: 1.2rem;
+    }
+    // .news-date {
+    //     color: $date-orange;
+    // }
+
+}
+
+.boxcontainer {
+    display: flex;
+    justify-content: center;
+}
+.newsbox {
+    width: 250px;
+    height: 150px;
+    background-color: $box-color;
 }
