@@ -447,7 +447,7 @@ h1 {
     }
     @include desktop {
         top: 0px;
-        left: 300px;
+        left: 130px;
         height: 700px;
     }
 }
@@ -942,11 +942,52 @@ h1 {
 }
 
 #contact {
-    position: relative;
+ position: relative;
+
+    .div-cont-bg {
+        position: absolute;
+        top: 0;
+        left:-20px;
+        width: 110%;
+        overflow-x: hidden;
+
+        @include desktop {
+            display: none;
+        }
+        .div-bg {
+            position: relative;
+            width: 112%;
+            height: 410px;
+            background-color: #ff68031f;
+            z-index: -1;
+            top: -10px;
+            left:-50px;
+            border-radius: 20px 20px;
+            @include tablet {
+                width: 115%;
+                top: -20px;
+                left: -40px;
+                height: 550px;
+            }
+        
+            @include tablet-ls {
+                width: 154%;
+                top: -30px;
+                left: -258px;
+            }
+        
+
+        }
+    }
+ 
+
+
+
 
     @include tablet {
         margin-top: 5rem;
     }
+
         img {
             display: none;
 
