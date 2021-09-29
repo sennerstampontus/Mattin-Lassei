@@ -799,7 +799,7 @@ h1 {
         @include tablet-ls {
             grid-template-columns: 1fr;
             grid-column: 1;
-            column-gap: 2rem;
+            column-gap: 2.8rem;
         }
         @include desktop {
             margin-top: 2rem;
@@ -951,7 +951,7 @@ h1 {
         position: absolute;
         top: 0;
         left:-30px;
-        width: 110%;
+        width: 120%;
         overflow-x: hidden;
         border-radius: 20px 20px;
 
@@ -961,7 +961,7 @@ h1 {
 
         @include tablet-ls {
             top: -15px;
-            left: -50px;
+            left: -100px;
         }
 
         @include desktop {
@@ -1001,8 +1001,13 @@ h1 {
         margin-top: 5rem;
     }
 
+    @include tablet-ls {
+        margin-left: 80px;
+    }
+
     @include desktop {
-        margin-top: -8 rem;
+        margin-top: -8rem;
+        margin-left: 0;
     }
 
         img {
@@ -1011,8 +1016,8 @@ h1 {
             @include tablet-ls {
                 display: block;
                 position: absolute;
-                top: 130px;
-                left: 190px; 
+                top: 150px;
+                left: 150px; 
             }
 
             @include desktop {
@@ -1048,12 +1053,13 @@ h1 {
             }
         }
         .content-bread {
-            font-size: 0.8rem;
-            padding: 0 1.5rem;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.1rem;
             margin-bottom: 1.6rem;
 
             @include tablet {
                 font-size: 1.2rem;
+                padding: 0.5rem 3rem;
             }
 
             @include desktop {
@@ -1065,9 +1071,10 @@ h1 {
     }
     .contact-content {
         .hl-stats {
-            display: flex;
-            justify-content: space-evenly;
-            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 0.5fr;
+            text-align: center;
             color: $numbers-pink;
 
             @include tablet {
