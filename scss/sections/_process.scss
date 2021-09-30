@@ -1,3 +1,4 @@
+
 #process {
 
     display: grid;
@@ -244,6 +245,7 @@
     margin-top: 1rem;
     grid-column: 1 / -1;
     grid-row: 2;
+    color: $secondary-text-color;
 
     @include tablet {
         grid-column: 2;

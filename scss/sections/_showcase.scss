@@ -52,8 +52,6 @@
         text-align: start;
     }
     @include desktop {
-        font-size: 1rem;
-        text-align: start;
         width: 500px;
         padding-top: 1rem;
         padding-left: 0;
@@ -136,7 +134,7 @@
     &:hover {
         color: $gradient-startcolor;
         background: $gradient-endcolor;
-        transition: background .5s, color .5s ease;
+        transition: color .5s ease;
     }
 
     &:focus {
@@ -155,5 +153,4 @@
         padding-left: 35px;
         padding-right: 35px;
     }
-
 }
