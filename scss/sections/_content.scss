@@ -1,0 +1,191 @@
+.content-title {
+    font-family: $secondary-font;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.content-bread {
+    font-family: $primary-font;
+    font-size: 0.8rem;
+    text-align: center;
+}
+#content {
+    display: block;
+    grid-area: content;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    //grid-row:3;
+    grid-column: 1 / -1;
+
+    @include tablet {
+        display: block;
+    }
+
+    @include tablet-ls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-area: content;
+        grid-gap: 2rem;
+        //grid-row: 3;
+        grid-column: 1 / -1;
+    }
+
+    @include desktop {
+        grid-template-columns: 1fr 1fr 1fr;
+        // grid-column-gap: 9rem;
+        column-gap: 5rem;
+    }
+    .content-hl {
+        grid-column: 1 / -1;
+        grid-row: 1;
+
+        @include desktop {
+            grid-column: 1;
+            grid-row: 1;
+            justify-content: flex-start;
+        }
+    }
+
+    .content-title {
+        font-family: $secondary-font;
+        font-size: 1.4rem;
+        text-align: center;
+        margin-top: 8rem;
+
+        @include tablet {
+            font-size: 2.5rem;
+        }
+
+        @include desktop {
+            font-size: 2.1rem;
+            text-align: start;
+            margin-bottom: -0.8rem;
+            padding-right: 75px;
+        }
+    }
+
+    .content-bread {
+        font-family: $primary-font;
+        font-size: 0.8rem;
+        text-align: center;
+        margin: 1.4rem 0;
+
+        @include tablet {
+            font-size: 1.3rem;
+        }
+
+        @include desktop {
+            text-align: start;
+            font-size: 0.8em;
+            margin-bottom: -20px;
+        }
+    }
+
+    .tools-title {
+        @include tablet {
+            font-size: 1.5rem;
+        }
+
+        @include desktop {
+            font-size: 1rem;
+            margin-bottom: -10px;
+        }
+    }
+
+    .content-border {
+        border-bottom: 1px solid $gradient-startcolor;
+        border-radius: 3px;
+        padding: 0.7rem 0;
+
+        @include desktop {
+            border: none;
+        }
+    }
+
+    #page_faster {
+
+        @include desktop {
+            grid-column: 2;
+            grid-row: 1;
+            text-align: start;
+            width: 70%;
+        }
+
+    }
+    #site_ranking {
+
+        @include desktop {
+        grid-column: 3;
+        grid-row: 1;
+        text-align: start;
+        width: 70%;
+        }
+    }
+    #global_award {
+
+        @include desktop {
+        grid-column: 2;
+        grid-row: 2;
+        text-align: start;
+        width: 70%;
+        margin-top: -100px;
+        }
+    }
+    #safe_secure {
+
+        @include desktop {
+        grid-column: 3;
+        grid-row: 2;
+        text-align: start;
+        width: 70%;
+        margin-top: -100px;
+        }
+    }
+
+    .content_btn {
+        font-size: 0.7rem;
+        padding: 0.8rem 2rem;
+        text-align: center;
+        margin: 1rem;
+        
+            @include tablet {
+                font-size: 1.3rem;
+            }
+                
+            @include tablet-ls {
+                grid-column: 1 / -1;
+                width: 50%;
+                justify-self: center;
+            }
+
+            @include desktop {
+                grid-column: 1;
+                grid-row: 2;
+                font-size: 0.6rem;
+                width: 35%;
+                padding: 10px 10px;
+                height: auto;
+                align-self: flex-start;
+                justify-self: start;
+                text-align: center;
+                margin-left: -2px;
+                margin-top: 0px;
+                border: none;
+            }
+        }
+        
+    img {
+        width: 70px;
+        
+        @include tablet {
+            width: 100px;
+                }
+        
+        @include desktop {
+            width: 70px;
+        }
+    }
+}

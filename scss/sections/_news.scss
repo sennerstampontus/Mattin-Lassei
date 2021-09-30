@@ -1,0 +1,48 @@
+#news-hl {
+    margin-top: 5rem;
+    // grid-row: 7;
+    grid-column: 1 / -1;
+    text-align: center;
+    grid-area: latest;
+
+    @include tablet-ls {
+        margin-top: 15rem;
+        grid-area: latest;
+        grid-row: 6;
+        grid-column: 1 / -1;
+    }
+
+    @include desktop {
+        margin-top: 20rem;
+    }
+    h1{
+        margin-left:0.2rem;
+        margin-right:0.2rem;
+        margin-bottom: 0.5rem;
+
+        @include tablet-ls {
+            padding-left: 150px;
+            padding-right: 150px;
+        }
+        @include desktop {
+            font-size: 2.4rem;
+            span::before {
+                content: "\A";
+                white-space: pre;
+            }
+        }
+    }
+
+    p {
+        @include tablet-ls {
+            padding-left: 200px;
+            padding-right: 200px;
+        }
+        @include desktop {
+            span::before {
+                content: "\A";
+                white-space: pre;
+            }
+        }
+    }
+}

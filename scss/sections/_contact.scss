@@ -1,0 +1,232 @@
+#contact {
+    position: relative;
+    grid-area: contact;
+   //  grid-row: 5;
+    grid-column: 1 / -1;
+    
+       @include tablet {
+           margin-top: 5rem;
+           grid-area: contact;
+       }
+   
+       @include desktop {
+           margin-top: -18rem;
+       }  
+       .div-cont-bg {
+           position: absolute;
+           top: 0;
+           left:-30px;
+           width: 120%;
+           overflow-x: hidden;
+           border-radius: 20px 20px;
+   
+           @include tablet {
+               left: -90px;
+           }
+   
+           @include tablet-ls {
+               top: -15px;
+               left: -100px;
+           }
+           .div-bg {
+               position: relative;
+               width: 112%;
+               height: 460px;
+               background-color: #ff68031f;
+               z-index: -1;
+               top: -60px;
+               left:-50px;
+               border-radius: 20px 20px;
+               @include tablet {
+                   width: 115%;
+                   top: -20px;
+                   left: -40px;
+                   height: 550px;
+               }
+           
+               @include tablet-ls {
+                   width: 154%;
+                   height: 580px;
+                   top: -30px;
+                   left: -258px;
+               }
+   
+               @include desktop {
+                   background: none;
+               }
+           }
+       }
+           img {
+               display: none;
+   
+               @include tablet-ls {
+                   display: block;
+                   position: absolute;
+                   width: 78%;
+                   height: 350px;
+                   top: 170px;
+                   left: 100px; 
+               }
+   
+               @include desktop {
+                   width: 55%;
+                   height: auto;
+                   top: 195px;
+                   left: 245px;
+               }
+           }
+       .contact-hl {
+           text-align: center;
+           .content-title {
+               font-size: 1.3rem;
+               padding: 0 0.5rem;
+   
+               @include tablet {
+   
+                   font-size: 2rem;
+                   span::before {
+                       content: "\A";
+                       white-space: pre;
+                   }
+               }
+   
+               @include desktop {
+                   font-size: 2.5rem;
+                   padding: 0 270px;
+                   line-height: 1.2;
+                   span::before {
+                       white-space: normal;
+                   }
+               }
+           }
+           .content-bread {
+               font-size: 0.7rem;
+               padding: 0.2rem 0.1rem;
+               margin-bottom: 1.6rem;
+   
+               @include tablet {
+                   font-size: 1.2rem;
+                   padding: 0.5rem 3rem;
+               }
+   
+               @include desktop {
+                   font-size: 0.8rem;
+                   padding: 0 350px;
+                   margin: 1rem 0;
+               }
+           }
+       }
+       .contact-content {
+           .hl-stats {
+               display: grid;
+               grid-template-columns: 1fr 1fr 1fr 1fr;
+               grid-template-rows: 1fr 0.5fr;
+               text-align: center;
+               color: $numbers-pink;
+   
+               @include tablet {
+                   font-size: 1.8rem;   
+               }
+   
+               @include desktop {
+                   display: grid;
+                   grid-template-columns: 1fr 1fr 1fr 1fr;
+                   grid-template-rows: 1fr 0.5fr;
+                   font-size: 1.5rem;
+                   text-align: center;
+                   padding: 0 100px;
+                   padding-top: 80px;
+               }
+   
+               p {
+                   font-size: 0.7rem;
+                   color: $secondary-text-color;
+   
+                   @include tablet {
+                       font-size: 1.2rem;
+                   }
+   
+                   @include desktop {
+                       font-size: 0.8rem;
+                   }
+               }
+           }
+       }
+   
+       .justifycontent-center {
+           display: flex;
+           justify-content: center;
+       }
+   
+       #contact-box {
+           font-family: $secondary-font;
+           font-weight: $semi-bold;
+           margin-top: 2rem;
+           text-align: center;
+   
+           @include tablet {
+               margin-top: 3.5rem;
+               font-size: 1.2rem;
+           }
+   
+           @include tablet-ls {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               justify-content: space-evenly;
+               position: absolute;
+               background-color: white;
+               height: 120px;
+               width: 700px;
+               box-shadow: 0px 0px 15px 2px  rgba(155, 155, 155, .5);
+               border-radius: 15px 15px;
+           }
+   
+           @include desktop {
+               font-size: 0.8rem;
+               width: 500px;
+               height: 100px;
+               border-radius: 10px 10px;
+           }
+           .content-bread {
+               font-family: $primary-font;
+               font-weight: $regular;
+   
+               @include tablet {
+                   font-size: 1.2rem;
+               }
+   
+               @include tablet-ls {
+                   text-align: start;
+               }
+   
+               @include desktop {
+                   font-size: 0.7rem;
+               }
+           }
+           .content_btn {
+               font-family: $primary-font;
+               font-weight: $bold;
+               margin-top: 1rem;
+               font-size: 1rem;
+               width: 80%;
+               border: none;
+   
+               @include tablet-ls {
+                   width: 200px;
+                   height: 60px;
+               }
+   
+               @include desktop {
+                   font-size: 0.6rem;
+                   width: 20%;
+                   padding: 10px 10px;
+                   height: 40px;
+                   margin-bottom: 10px;
+                   justify-self: start;
+                   text-align: center;
+                   border: none;
+               }
+           }
+       }
+   }
