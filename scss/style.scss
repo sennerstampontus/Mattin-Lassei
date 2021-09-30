@@ -1,5 +1,10 @@
 @import "./variables";
 
+// Har kommenterat bort grid-row, vilket inte borde behövas då jag använder grid-area?
+// Dock så får jag felmeddelanden för att jag inte har grid-row 
+// "Also define the standard property 'grid-row' for compability"
+// Vilket jag inte ännu förstått.
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,14 +12,20 @@
 }
 
 html, body {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.5;
     font-family: $primary-font;
+    scroll-behavior: smooth;
 }
 
 h1 {
     font-family: $secondary-font;
     font-weight: $bold;
+}
+
+a {
+    text-decoration: none;
+    
 }
 
 .container {
@@ -85,8 +96,7 @@ h1 {
     left: 0;
     display: grid;
     grid-template-columns: 1fr;
-    // grid-template-rows: auto auto auto auto auto auto;
-    grid-template-areas: $grid-template-mobile; 
+    grid-template-areas: $grid-template;
     overflow-x: hidden; 
 
     @include tablet {
@@ -118,20 +128,20 @@ h1 {
     width: 100%;
     align-items: center;
     grid-area: navbar;
-    grid-row:1;
+    //grid-row:1;
     grid-column: 1 / -1;
 
 @include tablet-ls {
     height: 113px;
     grid-area: navbar;
-    grid-row:1;
+    //grid-row:1;
     grid-column: 1 / -1;
 }
 
 @include desktop {
     height: 113px;
     grid-template-rows: 1fr;
-    grid-row:1;
+    //grid-row:1;
     }
 }
 
@@ -174,6 +184,35 @@ h1 {
     }
 }
 
+.uncheck {
+    position: fixed;
+    z-index: 1;
+    top: calc(50% - 25.5px);
+    left: calc(54% - 25.5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility .3s , opacity .2s ease;
+    transition-delay: 0s;
+
+    @include tablet {
+        top: calc(55% - 25.5px);
+        left: calc(52% - 25.5px);
+    }
+
+    @include tablet-ls {
+        display: none;
+    }
+
+    i {
+        color: white;
+        font-size: 1.5rem;
+
+        @include tablet {
+            font-size: 2rem;
+        }
+    }
+}
+
 
 #company {
     text-align: start;
@@ -208,10 +247,11 @@ h1 {
     background: rgba(97, 97, 97, 0.99);
     width: 100%;
     height: 0;
-    top: 120px;
+    top: 100px;
     left: 0;
     text-align: center;
     transition: height 0.5s;
+    z-index: 1;
 
     @include tablet-ls {
         position: static;
@@ -235,6 +275,13 @@ h1 {
     @include tablet-ls {
         height: 0vh;
     }
+}
+
+#logo:checked ~ .menu .linkmenu .uncheck {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility .3s , opacity .3s ease;
+    transition-delay: .2s;
 }
 
 #logo:checked~.menu .linkmenu .navlinks {
@@ -330,7 +377,15 @@ h1 {
 
 .tryitfree {
     display: none;
-  
+    
+    &:hover{
+        color: white;
+        background-image: $gradientcolor; 
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.12rem rgba($color: $gradient-startcolor, $alpha: .3);
+    }
 
     @include tablet-ls {
         align-self: center;
@@ -361,11 +416,7 @@ h1 {
     }
 }
 
-.tryitfree:hover{
-    @include tablet-ls {
-        background-image: $gradientcolor;
-    }
-}
+
 
 .box {
     padding: 1rem;
@@ -376,7 +427,7 @@ h1 {
     margin-top: 25px;
     grid-area: showcase;
     text-align: center;
-    grid-row: 2;
+    //grid-row: 2;
     grid-column: 1 /-1;
 }
 
@@ -430,6 +481,7 @@ h1 {
         width: 500px;
         padding-top: 1rem;
         padding-left: 0;
+        padding-right: 50px;
         margin: 0;
     }
 }
@@ -489,7 +541,7 @@ h1 {
     
 
     @include desktop {
-        margin-left: -15.5rem;
+        margin-left: -16rem;
     }
 }
 
@@ -505,20 +557,32 @@ h1 {
     cursor: pointer;
     color: white;
 
+    &:hover {
+        color: $gradient-startcolor;
+        background: $gradient-endcolor;
+        transition: background .5s ease, color .5s ease;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.12rem rgba($color: $gradient-startcolor, $alpha: .3);
+    }
+
     @include tablet {
         font-size: 1.2rem;
     }
 
     @include desktop {
-        font-size: 1rem;
-        border: none; 
+        font-size: 0.8rem;
+        border: none;
+        padding-top: 20px;
+        padding-bottom: 20px; 
+        padding-left: 35px;
+        padding-right: 35px;
     }
 
 }
 
-.content_btn:hover {
-    background: $gradient-endcolor;
-}
+
 
 .content-title {
     font-family: $secondary-font;
@@ -538,7 +602,7 @@ h1 {
     width: 100%;
     height: auto;
     text-align: center;
-    grid-row:3;
+    //grid-row:3;
     grid-column: 1 / -1;
 
     @include tablet {
@@ -551,7 +615,7 @@ h1 {
         grid-template-rows: auto auto auto auto;
         grid-area: content;
         grid-gap: 2rem;
-        grid-row: 3;
+        //grid-row: 3;
         grid-column: 1 / -1;
     }
 
@@ -719,7 +783,7 @@ h1 {
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
     margin-top: 2rem;
-    grid-row: 4;
+    //grid-row: 4;
     grid-column: 1 / -1;
 
     @include tablet-ls {
@@ -760,22 +824,22 @@ h1 {
     }
 
     .process-content {
-            grid-column: 1 / -1;
-            grid-row: 1;
-            text-align: center;
-            font-size: 1.1rem;
-            margin: 2rem;
+        grid-column: 1 / -1;
+        grid-row: 1;
+        text-align: center;
+        font-size: 1.1rem;
+        margin: 2rem;
 
 
 
-            @include tablet-ls {
-                display: grid;
-                grid-column: 2;
-            }
+        @include tablet-ls {
+            display: grid;
+            grid-column: 2;
+        }
 
-            @include desktop {
-                width: 75%;
-            }
+        @include desktop {
+            width: 75%;
+        }
 
             .content-hl {
                 @include tablet {
@@ -811,7 +875,7 @@ h1 {
     .pr-items-1{
         display: grid;
         grid-template-columns: 0.5fr 1.6fr;
-        grid-row: auto auto;
+        grid-row: 1;
         grid-column: 1 / -1;
         text-align: center;
         margin: 2rem 0;
@@ -836,7 +900,7 @@ h1 {
     .pr-items-2{
         display: grid;
         grid-template-columns: 0.5fr 1.6fr;
-        grid-row: auto auto;
+        grid-row: 2;
         grid-column: 1 / -1;
         text-align: center;
         margin: 2rem 0;
@@ -862,7 +926,7 @@ h1 {
     .pr-items-3{
         display: grid;
         grid-template-columns: 0.5fr 1.6fr;
-        grid-row: auto auto;
+        grid-row: 3;
         grid-column: 1 / -1;
         text-align: center;
         margin: 2rem 0;
@@ -972,16 +1036,17 @@ h1 {
 
 #contact {
  position: relative;
- grid-row: 5;
+ grid-area: contact;
+//  grid-row: 5;
  grid-column: 1 / -1;
  
-
     @include tablet {
         margin-top: 5rem;
+        grid-area: contact;
     }
 
     @include desktop {
-        margin-top: -8rem;
+        margin-top: -18rem;
     }  
     .div-cont-bg {
         position: absolute;
@@ -998,10 +1063,6 @@ h1 {
         @include tablet-ls {
             top: -15px;
             left: -100px;
-        }
-
-        @include desktop {
-            display: none;
         }
         .div-bg {
             position: relative;
@@ -1021,32 +1082,35 @@ h1 {
         
             @include tablet-ls {
                 width: 154%;
+                height: 580px;
                 top: -30px;
                 left: -258px;
             }
+
+            @include desktop {
+                background: none;
+            }
         }
     }
- 
-
-
         img {
             display: none;
 
             @include tablet-ls {
                 display: block;
                 position: absolute;
-                top: 150px;
-                left: 150px; 
+                width: 78%;
+                height: 350px;
+                top: 170px;
+                left: 100px; 
             }
 
             @include desktop {
                 width: 55%;
                 height: auto;
-                top: 200px;
-                left: 240px;
+                top: 195px;
+                left: 245px;
             }
         }
-    grid-area: contact;
     .contact-hl {
         text-align: center;
         .content-title {
@@ -1064,7 +1128,7 @@ h1 {
 
             @include desktop {
                 font-size: 2.5rem;
-                padding: 0 300px;
+                padding: 0 270px;
                 line-height: 1.2;
                 span::before {
                     white-space: normal;
@@ -1205,7 +1269,7 @@ h1 {
 
 #news-hl {
     margin-top: 5rem;
-    grid-row: 7;
+    // grid-row: 7;
     grid-column: 1 / -1;
     text-align: center;
     grid-area: latest;
@@ -1213,6 +1277,12 @@ h1 {
     @include tablet-ls {
         margin-top: 15rem;
         grid-area: latest;
+        grid-row: 6;
+        grid-column: 1 / -1;
+    }
+
+    @include desktop {
+        margin-top: 20rem;
     }
     h1{
         margin-left:0.2rem;
@@ -1222,6 +1292,10 @@ h1 {
         @include tablet-ls {
             padding-left: 150px;
             padding-right: 150px;
+        }
+        @include desktop {
+            padding-left: 100px;
+            padding-right: 100px;
         }
     }
 
@@ -1234,23 +1308,49 @@ h1 {
 }
 
 #read-more {
-    grid-area: latest;
+    grid-area: reamore;
     margin-top: 3rem;
-    grid-row: 7;
+    // grid-row: 7;
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 1fr;
+
+    @include desktop {
+        justify-content: center;
+        grid-template-columns: 370px 370px 370px;
+        column-gap: 2rem;
+    }
 } 
 
 .read-more-content {
     text-align: center;
+
+    @include desktop {
+        box-shadow: 0 0 10px 0.15px rgba($color: $box-color, $alpha: .2);
+        margin-bottom: 4rem;
+
+        background-image: linear-gradient($gradient-startcolor, $gradient-endcolor);
+        background-position: bottom left; 
+        background-size: 0% 4px; 
+        background-repeat: no-repeat;
+        padding-bottom: 1px; 
+        transition: background-size .3s;
+    }
+        &:hover {
+            background-image: linear-gradient($gradient-startcolor, $gradient-endcolor);
+            background-position: bottom left; 
+            background-size: 100% 4px; 
+            background-repeat: no-repeat;
+            padding-bottom: 1px; 
+            transition: background-size .3s;
+        }
     
     .dates {
         margin-top: 0.5rem;
         font-size: 0.8rem;
         padding-left: 45px;
         font-family: $secondary-font;
-        font-weight: $regular;
+        font-weight: $medium;
         text-align: start;
         color: $date-orange;
 
@@ -1263,6 +1363,12 @@ h1 {
         @include tablet-ls {
             font-size: 1rem;
             padding-left: 255px;
+        }
+        @include desktop {
+            font-size: 0.8rem;
+            text-align: start;
+            padding-top: 10px;
+            padding-left: 20px;
         }
     }
     .content-title {
@@ -1277,6 +1383,23 @@ h1 {
         @include tablet-ls { 
             padding-left: 255px;
             padding-right: 230px;
+        }
+        @include desktop {
+            text-align: start;
+            padding-left: 20px;
+            padding-right: 0;
+        }
+
+        .news-title {
+            font-size: 1.2rem;
+            @include tablet {
+                font-size: 1.7rem;
+            }
+            @include desktop {
+                font-size: 1.4rem;
+                line-height: 1.3;
+                padding-right: 50px;
+            }
         }
     }
 
@@ -1295,6 +1418,14 @@ h1 {
             padding-left: 255px;
             padding-right: 230px;
         }
+        @include desktop {
+            text-align: start;
+            font-size: 0.8rem;
+            padding-top: 0.5rem;
+            padding-bottom: 1rem;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
     }
 
 
@@ -1303,7 +1434,10 @@ h1 {
         padding-bottom: 20px;
 
         @include tablet-ls { 
-            padding-right: 290px;;
+            padding-right: 290px;
+        }
+        @include desktop {
+            padding-left: 20px;
         }
         .content_btn {
             padding: 0.6rem 1.2rem;
@@ -1312,11 +1446,15 @@ h1 {
             text-transform: uppercase;
             font-size: 0.7rem;
             background: $gradientcolor;
-            border: 1px solid $date-orange;
             border-radius: 5px;
             cursor: pointer;
             color: white;
 
+            &:hover {
+                color: $gradient-startcolor;
+                background: $gradient-endcolor;
+            }
+            
             @include tablet {
                 font-size: 1rem;
                 padding-top: 0.3rem;
@@ -1324,15 +1462,18 @@ h1 {
                 padding-left: 1.5rem;
                 padding-right: 1.5rem;
             }
+            @include desktop {
+                font-size: 0.8rem;
+                width: 120px;
+                height: 45px;
+                padding-top: 16px;
+                padding-bottom: 16px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
         }
     }
  
-    .news-title {
-        font-size: 1.2rem;
-        @include tablet {
-            font-size: 1.7rem;
-        }
-    }
 
 }
 
@@ -1348,5 +1489,9 @@ h1 {
     @include tablet {
         width: 450px;
         height: 350px;
+    }
+    @include desktop {
+        width: 370px;
+        height: 250px;
     }
 }
