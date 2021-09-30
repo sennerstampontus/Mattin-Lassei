@@ -1315,8 +1315,11 @@ a {
             padding-right: 150px;
         }
         @include desktop {
-            padding-left: 100px;
-            padding-right: 100px;
+            font-size: 2.4rem;
+            span::before {
+                content: "\A";
+                white-space: pre;
+            }
         }
     }
 
@@ -1324,6 +1327,12 @@ a {
         @include tablet-ls {
             padding-left: 200px;
             padding-right: 200px;
+        }
+        @include desktop {
+            span::before {
+                content: "\A";
+                white-space: pre;
+            }
         }
     }
 }
@@ -1345,7 +1354,7 @@ a {
 
 .read-more-content {
     text-align: center;
-
+    margin-bottom: 2rem;
     @include desktop {
         box-shadow: 0 0 10px 0.15px rgba($color: $box-color, $alpha: .2);
         margin-bottom: 4rem;
@@ -1356,7 +1365,7 @@ a {
         background-repeat: no-repeat;
         padding-bottom: 1px; 
         transition: background-size .3s;
-    }
+
         &:hover {
             background-image: linear-gradient($gradient-startcolor, $gradient-endcolor);
             background-position: bottom left; 
@@ -1365,6 +1374,8 @@ a {
             padding-bottom: 1px; 
             transition: background-size .3s;
         }
+    }
+        
     
     .dates {
         margin-top: 0.5rem;
