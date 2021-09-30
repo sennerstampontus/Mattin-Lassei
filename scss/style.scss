@@ -1,4 +1,11 @@
 @import "./variables";
+@import"./sections/navbar";
+@import"./sections/showcase";
+@import"./sections/content";
+@import"./sections/process";
+@import"./sections/contact";
+@import"./sections/news";
+@import"./sections/readmore";
 
 // Har kommenterat bort grid-row, vilket inte borde behövas då jag använder grid-area?
 // Dock så får jag felmeddelanden för att jag inte har grid-row 
@@ -26,10 +33,6 @@ h1 {
 a {
     text-decoration: none;
     
-}
-
-.d-flex{
-    display: flex;
 }
 
 .container {
