@@ -70,6 +70,7 @@
     .content-title {
         font-weight: $bold;
         text-align: start;
+        line-height: 1.3;
         padding-left: 45px;
 
         @include tablet {
@@ -82,7 +83,6 @@
             padding-right: 230px;
         }
         @include desktop {
-            line-height: 1.3;
             text-align: start;
             padding-left: 20px;
             padding-right: 0;
