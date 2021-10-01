@@ -15,7 +15,7 @@
     @include desktop {
         margin-top: 20rem;
     }
-    h1{
+    h2{
         margin-left:0.2rem;
         margin-right:0.2rem;
         margin-bottom: 0.5rem;
@@ -26,6 +26,7 @@
         }
         @include desktop {
             font-size: 2.1rem;
+            line-height: 1.4;
             span::before {
                 content: "\A";
                 white-space: pre;
