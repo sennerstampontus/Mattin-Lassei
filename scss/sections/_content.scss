@@ -1,9 +1,4 @@
 
-.content-title {
-    font-family: $secondary-font;
-    font-size: 1.4rem;
-    text-align: center;
-}
 
 .content-bread {
     font-family: $primary-font;
@@ -58,12 +53,17 @@
         margin-top: 8rem;
 
         @include tablet {
-            font-size: 2.5rem;
+            font-size: 2rem;
+        }
+
+        @include tablet-ls {
+            font-size: 1.8rem;
         }
 
         @include desktop {
             font-size: 2.1rem;
             text-align: start;
+            line-height: 1.3;
             margin-bottom: -0.8rem;
             padding-right: 75px;
         }
@@ -76,7 +76,11 @@
         margin: 1.4rem 0;
 
         @include tablet {
-            font-size: 1.3rem;
+            font-size: 1rem;
+        }
+
+        @include tablet-ls {
+            font-size: 0.8rem;
         }
 
         @include desktop {
@@ -87,8 +91,15 @@
     }
 
     .tools-title {
+        font-family: $secondary-font;
+        font-weight: $bold;
+        color: $primary-text-color;
         @include tablet {
             font-size: 1.5rem;
+        }
+
+        @include tablet-ls {
+            font-size: 1.1rem;
         }
 
         @include desktop {
@@ -155,12 +166,13 @@
 
         
             @include tablet {
-                font-size: 1.3rem;
+                font-size: 1rem;
             }
                 
             @include tablet-ls {
+                font-size: 0.8rem;
                 grid-column: 1 / -1;
-                width: 50%;
+                width: 45%;
                 justify-self: center;
             }
 
