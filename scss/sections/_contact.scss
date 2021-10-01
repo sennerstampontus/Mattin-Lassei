@@ -137,7 +137,7 @@
                    display: grid;
                    grid-template-columns: 1fr 1fr 1fr 1fr;
                    grid-template-rows: 1fr 0.5fr;
-                   font-size: 1.5rem;
+                   font-size: 2.3rem;
                    text-align: center;
                    padding: 0 100px;
                    padding-top: 80px;
@@ -165,6 +165,7 @@
    
        #contact-box {
            font-family: $secondary-font;
+           font-weight: $semi-bold;
            margin-top: 2rem;
            text-align: center;
    
@@ -187,11 +188,12 @@
            }
    
            @include desktop {
-               font-size: 0.8rem;
+               font-size: .9rem;
                width: 500px;
                height: 100px;
                border-radius: 10px 10px;
            }
+
            .content-bread {
                font-family: $primary-font;
                font-weight: $regular;

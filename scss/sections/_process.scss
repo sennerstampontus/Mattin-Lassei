@@ -82,21 +82,15 @@
                     
                 }
 
-                span::before {
-                    @include desktop {
-                        content: "\A";
-                        white-space: pre;
-                    }
-                }
-                span::after {
-                    @include desktop {
-                        content: "\A";
-                        white-space: pre;
-                    }
-                }
                 .content-title {
-                    
-                    font-weight: $bold;;
+                    font-weight: $bold;
+
+                    span::before {
+                        @include desktop {
+                            content: "\A";
+                            white-space: pre;
+                        }
+                    }
                     @include tablet-ls {
                         text-align: start;
                         font-size: 1.8rem;
