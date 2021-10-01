@@ -125,6 +125,7 @@
     .readmore_btn {
         text-align: center;
         padding-bottom: 20px;
+        
 
         @include tablet-ls { 
             padding-right: 290px;
@@ -134,20 +135,8 @@
         }
         .content_btn {
             padding: 0.6rem 1.2rem;
-            font-family: $primary-font;
-            font-weight: $bold;
-            text-transform: uppercase;
             font-size: 0.7rem;
-            background: $gradientcolor;
-            border-radius: 5px;
-            cursor: pointer;
-            color: white;
-
-            &:hover {
-                color: $gradient-startcolor;
-                background: $gradient-endcolor;
-            }
-            
+   
             @include tablet {
                 font-size: 1rem;
                 padding-top: 0.3rem;
